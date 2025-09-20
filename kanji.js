@@ -38,7 +38,7 @@
       .then(kanjiFile => {
         kanjiShugo = kanjiFile;
         localStorage.setItem('kanjiLocal', JSON.stringify(kanjiFile));
-        console.log("外部として入手", kanjiShugo);
+        console.log("外部として入手");
         openKanji(unicodeValue);
       })
       .catch(error => console.error('Error loading JSON:', error));
@@ -53,7 +53,7 @@
   } else {
 
     kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
-    console.log("内部として処理",kanjiShugo);
+    console.log("内部として処理");
     setTimeout(() => {
       openKanji(unicodeValue);
     }, 200); //1秒間タイマー
@@ -130,6 +130,10 @@
     // theTargetKanji.textContent = targetKanji;
 
     console.log("異体字の情報を得る直前",theKanji.nOfJitai);
+
+    console.log("typeof kariItaiji:", typeof kariItaiji);
+console.log("window.hasOwnProperty('kariItaiji'):", window.hasOwnProperty("kariItaiji"));
+
     //異体字の情報を得る
     for (let i = 1; i < theKanji.nOfJitai; i++) {
       kariItaiji[i + 1] = theKanji.kanjiCode + "_" + (i + 1);
