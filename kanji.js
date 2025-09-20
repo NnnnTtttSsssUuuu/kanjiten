@@ -12,15 +12,16 @@
   const ref = document.referrer;
   console.log("リファラ", ref);
   console.log("location.origin1", location.origin);
-    console.log("location.origin2");
 
 
-  const thisUrls = [
-    location.origin + "/",
-    location.origin + "/index.html"
-  ];
+  // const thisUrls = [
+  //   location.origin + "/",
+  //   location.origin + "/index.html"
+  // ];
 
-  let needJson = !thisUrls.includes(ref);
+  // let needJson = !thisUrls.includes(ref);
+
+  let needJson = !ref.includes(location.origin);
 
 
   //外部からならjsonを読み込む
