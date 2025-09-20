@@ -11,7 +11,9 @@
   //ユーザーのリファラ情報
   const ref = document.referrer;
   console.log("リファラ", ref);
-  console.log("location.origin", location.origin);
+  console.log("location.origin1", location.origin);
+    console.log("location.origin2");
+
 
   const thisUrls = [
     location.origin + "/",
