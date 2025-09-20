@@ -1,0 +1,541 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap');
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 5px;
+  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+}
+
+main {
+  flex: 1;
+}
+
+
+h1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 32px;
+  background-color: steelblue;
+  color: white;
+  position: fixed;
+  top: 0px;
+  margin: 0;
+  padding: 0 0 0 10px;
+  width: 100%;
+  z-index: 1;
+}
+
+
+pre {
+  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+
+  white-space: pre-wrap;
+  margin: 0;
+  padding: 0 0 0.5em 1em;
+
+  /* background-color: skyblue; */
+}
+
+
+.mini {
+  font-size: 10px;
+  line-height: 12px;
+}
+
+/* #getJson {
+  font-size: 10px;
+} */
+
+.close {
+  position: fixed;
+  top: 8px;
+  left: 350px;
+  font-size: 16px;
+}
+
+
+
+
+
+.oyaji,
+.itaiji,
+.itaiji1,
+.itaiji2,
+.itaiji3,
+.itaiji4 {
+  float: left;
+  margin: 0 0 0 0;
+}
+
+
+
+.hanrei {
+  float: left;
+
+  margin: 0 0 0 0;
+  padding-top: 55px;
+  text-align: right;
+  /* background-color: blueviolet; */
+}
+
+
+
+.kanjigun {
+  /* background-color: yellow; */
+  margin: 45px 10px 10px 1px;
+  /* padding: 100px; */
+  /* border: 1px solid black;
+  z-index: 1; */
+}
+
+
+.midashi {
+  font-family: "Noto Serif JP", sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  height: 50px;
+  margin: 0 0 0 20px;
+  color: black;
+  /* background-color: lightgreen; */
+}
+
+.midashi2 {
+  font-family: 'IPAmj明朝', sans-serif;
+  font-size: 40px;
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  top: 4px;
+  margin: 0 0 0 20px;
+  color: black;
+  /* background-color: orange; */
+}
+
+.midashi3 {
+  font-family: "游明朝体", "Yu Mincho", "YuMincho", sans-serif;
+  font-size: 40px;
+  height: 50px;
+  margin: -10px 0 15px 20px;
+  color: black;
+  /* background-color: lightgreen; */
+}
+
+
+
+/* .ipamj {
+  font-family: 'IPAmj明朝', sans-serif;
+  margin: 0 0 -20px 0;
+  line-height: 1.1;
+}
+
+.yumincho {
+  font-family: "游明朝体", "Yu Mincho", "YuMincho", sans-serif;
+  background-color: beige;
+} */
+
+
+
+.jikei {
+  width: 100px;
+  height: 90px;
+  margin: 3px 0 0 0;
+  font-size: 10px;
+  text-align: center;
+  background-color: bisque;
+}
+
+/* .gazoname {
+  line-height: 0px;
+  margin: 12px 0 72px 0;
+  font-size: 15px;
+  padding-right: 1em;
+ background-color: bisque;
+} */
+
+.gazoname {
+  margin: 0 0 58px 50px;
+  padding: 0 0 0 0;
+  width: 30px;
+  font-size: 15px;
+  border: 3px solid bisque;
+  background-color: bisque;
+}
+
+.fontname {
+  timeline-scope:
+    top: 140px;
+  line-height: 15px;
+  margin: 15px 0 32px 0;
+  padding: 0 15px 0 0;
+  font-size: 15px;
+
+}
+
+.youso1 {
+  line-height: 120%;
+  margin-top: -13px;
+}
+
+.youso {
+  line-height: 120%;
+  margin-top: -3px;
+}
+
+
+.kisuRetsu {
+  background-color: lightcyan;
+  padding-right: 1em;
+}
+
+.mojigun,
+.unicode,
+.jiscode,
+.bushu,
+.kakusu {
+  background-color: lightcyan;
+  padding-right: 1em;
+  font-feature-settings: "palt"
+}
+
+.jislevel,
+.menkuten,
+.bushu,
+.chuui {
+  background-color: white;
+  padding-right: 1em;
+}
+
+.menkuten,
+.jiscode {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.jishu {
+  margin: 0 0 0 2px;
+  border: 1px solid black;
+  background-color: black;
+  color: white
+}
+
+.chuui {
+  min-height: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0 0 0 2px;
+  padding: 2px 0 2px 0;
+  /* background-color: pink; */
+  color: red;
+  width: 100px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+
+.kaisetsu {
+  display: block;
+  clear: both;
+  margin: 0 1em 1em 1em;
+  /* background-color: yellow; */
+}
+
+.tsukaiwake,
+.sanko {
+  display: block;
+  clear: both;
+  margin: 0 0 0 -1em;
+}
+
+
+
+.menkutenran {
+  width: 90px;
+}
+
+.narrow.menkuten {
+  display: none;
+}
+
+.moji {
+  font-size: 30px;
+}
+
+.ji {
+  border: solid 1px;
+  margin-right: 5px;
+}
+
+.unicode {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.unicode.narrow {
+  font-family: Arial narrow, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+
+.gazomoji_image {
+  width: 44px;
+  height: 54px;
+  object-position: center 8px;
+}
+
+/* .subtable {
+  border-collapse: collapse;
+}
+
+.subtable th {
+  border: solid 1px;
+  background-color: #eee;
+}
+
+.subtable tr th:nth-child(1) {
+  width: 70px;
+}
+
+.subtable tr th:nth-child(2) {
+  width: 70px;
+}
+
+.subtable tr th:nth-child(3) {
+  width: 70px;
+}
+
+.subtable tr th:nth-child(4) {
+  width: 70px;
+}
+
+.subtable td {
+  border: solid 1px;
+} */
+
+.highlight {
+  background-color: yellow !important;
+}
+
+.biglight {
+  background-color: yellow !important;
+}
+
+/* .mj {
+  font-family: 'IPAmj明朝', 'Noto Serif JP', serif;
+} */
+
+#theTargetKanji {
+  display: none;
+}
+
+#tsukaiwakeEdit_ {
+  font-size: 16px;
+  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+  width: 600px;
+  height: 200px;
+}
+
+.fontzone {
+  position: absolute;
+  top: 50px;
+}
+
+.fontbutton {
+  font-size: 9px;
+}
+
+footer {
+  width: 100%;
+  height: 30px;
+  margin: 0;
+  padding: 0 0 15px 0;
+  text-align: center;
+  font-family: 'Noto Serif JP', serif;
+  color: white;
+  background-color: steelblue;
+}
+
+ul.footer-menu li {
+  display: inline;
+}
+
+
+@media screen and (max-width: 440px) {
+  /* @media screen and (max-width: 380px) { */
+
+  body {
+    margin: 0;
+    padding: 2px;
+    font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+    font-size: 16px;
+    width: 380px;
+  }
+
+  h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 24px;
+    background-color: steelblue;
+    color: white;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 45px;
+    margin: 0;
+    padding: 0 0 0 20px;
+    text-align: left;
+  }
+
+  .close {
+    position: fixed;
+    top: 6px;
+    left: 280px;
+    font-size: 16px;
+  }
+
+
+
+
+  .menkuten_,
+  .unicode_,
+  .yomi_ {
+    display: none;
+  }
+
+  .hanrei {
+    float: left;
+    /* margin: 0 0 10px 0; */
+    margin: 0 0 0 0;
+    padding-top: 60px;
+    text-align: right;
+  }
+
+  .youso1 {
+    font-family: Arial narrow, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+    line-height: 20px;
+    margin-top: 30px;
+    font-size: 16px;
+  }
+
+  .youso {
+    line-height: 20px;
+    margin-top: 11px;
+    font-size: 16px;
+  }
+
+
+  .unicode {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+  }
+
+  .unicode.narrow {
+    font-family: Arial narrow, Helvetica, sans-serif;
+    font-size: 16px;
+  }
+
+  .gazoname {
+    margin: 0 0 40px 30px;
+    padding: 0 0 0 0;
+    width: 32px;
+    font-size: 16px;
+    border: 3px solid bisque;
+    background-color: bisque;
+  }
+
+  .fontname {
+    font-family: Arial narrow, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+    font-size: 16px;
+    line-height: 3px;
+    margin-top: 0 0 0 0;
+    text-align: right;
+  }
+
+  #widemenkuten {
+    display: none;
+  }
+
+  .narrow.menkuten {
+    display: block;
+  }
+
+
+
+
+  .midashi {
+    font-family: 'Noto Serif JP', sans-serif;
+    font-size: 40px;
+    height: 40px;
+    margin-top: -10px;
+    color: black;
+  }
+
+
+  .midashi2 {
+    font-family: 'IPAmj明朝', sans-serif;
+    font-size: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 10px;
+    margin-left: 20px;
+    color: black;
+  }
+
+  .midashi3 {
+    font-family: "游明朝体", "Yu Mincho", "YuMincho", sans-serif;
+    font-size: 40px;
+    height: 40px;
+    margin-top: -8px;
+    margin-left: 20px;
+    color: black;
+  }
+
+
+  .jikei {
+    width: 80px;
+    height: 80px;
+
+    background-color: bisque;
+  }
+
+
+
+
+
+
+
+
+  .gazomoji_image {
+    width: 34px;
+    height: 44px;
+    object-position: center 8px;
+  }
+
+
+  .chuui {
+    font-size: 12px;
+    min-height: 20px;
+    margin: 0 0 0 2px;
+    padding: 2px 0 2px 0;
+    color: red;
+    width: 90px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    font-feature-settings: "palt";
+  }
+
+  footer {
+    width: 100%;
+    height: 30px;
+    margin: 0;
+    padding: 0 0 10px 0;
+    text-align: center;
+    font-family: 'Noto Serif JP', serif;
+    color: white;
+    background-color: steelblue;
+  }
+
+  ul.footer-menu li {
+    display: inline;
+  }
+
+}

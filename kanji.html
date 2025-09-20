@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" user-scalable=no>
+  <link rel="stylesheet" href="kanji.css">
+  <link rel="icon" href="img/kanfavicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap" rel="stylesheet">
+
+  <title id="title_">漢字字体字典</title>
+</head>
+
+<body>
+  <header id="headpart">
+    <h1>漢字字体使い分け字典
+      <span class="mini">※クリックで閉じる</span>
+      <!-- <input type="button" onclick="window.open('','_self').close();" value="閉じる" class="close"> -->
+      <!-- <button onclick="location.href='index.html'">漢字表へ</button> -->
+    </h1>
+  </header>
+
+  <main>
+    <div class="kanjigun" id="kanjigun_">
+      <section class="hanrei">
+        <div class="gazoname">画像</div>
+        <div class="fontname">Noto-Serif</div>
+        <div class="fontname">IPAmj明朝</div>
+        <div class="fontname">游明朝</div>
+
+        <div class="youso1">
+          <div class="kisuRetsu">文字群</div>
+          <div class="jislevel">JIS水準</div>
+          <div class="kisuRetsu">Unicode</div>
+          <div class="menkuten" id="widemenkuten">面区点番号</div>
+          <div class="narrow menkuten">面区点</div>
+          <div class="kisuRetsu">JISコード</div>
+          <div class="menkuten">注意</div>
+        </div>
+      </section>
+
+      <section class="oyaji">1
+        <span class="jishu" id="jishu_"></span>
+        <div class="jikei">
+          <img id="jikei_" src="" width="80">
+        </div>
+        <div class="midashi" id="midashi_">　</div>
+        <div class="midashi2" id="midashi2_">　</div>
+        <div class="midashi3" id="midashi3_">　</div>
+
+        <div class="youso">
+          <div class="mojigun" id="mojigun_">　</div>
+          <div class="jislevel" id="jislevel_">　</div>
+          <div class="unicode"><span id="unicode_">　</span></div>
+          <div class="menkuten"><span id="menkuten_">　</span></div>
+          <div class="jiscode"><span id="jiscode_">　</span></div>
+          <div><span class="chuui" id="chuui_">　</span></div>
+        </div>
+      </section>
+
+      <section class="itaiji" id="itaiji_">
+      </section>
+    </div>
+
+
+    <div class="kaisetsu">
+      <span>●読み：</span><span class="yomi" id="yomi_"></span>
+      <div>●来歴</div>
+      <pre class="raireki" id="raireki_"></pre>
+      <div>●使い分け</div>
+      <pre class="tsukaiwake" id="tsukaiwake_"></pre>
+      <pre class="sanko" id="sanko_"></pre>
+    </div>
+
+   <!-- <div>
+    ＜使い分けを編集する＞
+    <button id="save">データを上書き保存する</button>
+    <br><button id="csvButton">csvで出力する</button>
+    <button id="jsonButton">jsonで出力する</button>
+    <br><textarea id="tsukaiwakeEdit_"></textarea>
+    <div id="theTargetKanji"></div>
+   </div> -->
+
+  </main>
+
+  <footer>
+    <!-- <ul class="footer-menu">
+      <li>home ｜</li>
+      <li>about ｜</li>
+      <li>Contact Us</li>
+    </ul> -->
+    <p>©Nobuo Tsukahara</p>
+  </footer>
+
+
+  <!-- <script src="generateKanjiConents.js"></script> -->
+  <script src="kanji.js"></script>
+
+  <!-- <script>
+
+    // document.querySelector('.fontbutton').addEventListener('click', () => {
+    //   let fontElement = document.getElementById('fontselect');
+    //   let nowElement = document.querySelectorAll('.midashi');
+    //   if (fontElement.value == 1) {
+    //     nowElement.forEach(nowElement => nowElement.className = 'midashi ipamj');
+    //     console.log(document.body)
+    //   } else if (fontElement.value == 2) {
+    //     nowElement.forEach(nowElement => nowElement.className = 'midashi yumincho');
+    //   } else
+    //     nowElement.forEach(nowElement => nowElement.className = 'midashi');
+    // });
+
+
+
+
+    // document.querySelector('#save').addEventListener('click', () => {
+    //   let kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
+    //   let targetKanji = document.querySelector('#theTargetKanji').textContent;
+    //   let newTsukaiwake = document.querySelector('#tsukaiwakeEdit_').value;
+    //   console.log("targetKanji,newTsukaiwake,kanjiShugo", targetKanji, newTsukaiwake, kanjiShugo);
+    //   kanjiShugo[targetKanji].tsukaiwake = newTsukaiwake;
+    //   localStorage.setItem('kanjiLocal', JSON.stringify(kanjiShugo));
+    // });
+
+
+    // document.querySelector('#jsonButton').addEventListener('click', () => {
+    //   let kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
+    //   let targetKanji = document.querySelector('#theTargetKanji').textContent;
+    //   let newTsukaiwake = document.querySelector('#tsukaiwakeEdit_').value;
+    //   kanjiShugo[targetKanji].tsukaiwake = newTsukaiwake;
+    //   localStorage.setItem('kanjiLocal', JSON.stringify(kanjiShugo));
+    //   const newJson = JSON.stringify(kanjiShugo);
+    //   const bom = new Uint8Array([0xef, 0xbb, 0xbf]) //ここでUTF-8を指定
+    //   const blob = new Blob([bom, newJson], { type: "application/json" });
+    //   const url = URL.createObjectURL(blob);
+    //   const a = document.createElement("a");
+    //   a.href = url;
+    //   a.download = "new_jsonKanjiFile.json";
+    //   a.click();
+    //   URL.revokeObjectURL(url);
+    // });
+
+
+    // document.querySelector('#csvButton').addEventListener('click', () => {
+    //   let kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
+    //   let targetKanji = document.querySelector('#theTargetKanji').textContent;
+    //   let newTsukaiwake = document.querySelector('#tsukaiwakeEdit_').value;
+    //   kanjiShugo[targetKanji].tsukaiwake = newTsukaiwake;
+    //   localStorage.setItem('kanjiLocal', JSON.stringify(kanjiShugo));
+    //   const newJson = JSON.stringify(kanjiShugo);
+
+    //   //  https://zenn.dev/aiq_dev/articles/fa9dc673cbd554 を参考に
+    //   const convertToCSV = (objArray) => {
+    //     const array = typeof objArray !== "object" ? JSON.parse(objArray) : objArray;
+
+    //     //1. Objectの Key を headerとして取り出す
+    //     let str =
+    //       `${Object.keys(array[0])
+    //         .map((value) => `"${value}"`)
+    //         .join(",")}` + "\r\n";
+
+    //     // 2. 各オブジェクトの値をCSVの行として追加する
+    //     return array.reduce((str, next) => {
+    //       str +=
+    //         `${Object.values(next)
+    //           .map((value) => `"${value}"`)
+    //           .join(",")}` + "\r\n";
+    //       return str;
+    //     }, str);
+    //   };
+
+    //   const csvData = convertToCSV(newJson);
+    //   // console.log(csvData);
+
+    //   const bom = new Uint8Array([0xef, 0xbb, 0xbf]) //ここでUTF-8を指定
+    //   const blob = new Blob([bom, csvData], { type: "text/csv" });
+    //   const url = URL.createObjectURL(blob);
+    //   const a = document.createElement("a");
+    //   a.href = url;
+    //   a.download = "new_csvKanjiFile.csv";
+    //   a.click();
+    //   URL.revokeObjectURL(url);
+
+    //   //リロード禁止…効果なし
+    //   window.addEventListener("beforeunload", function () {
+    //     console.log("リロード");
+    //     window.location.replace(location.href);
+    //   });
+
+    // });
+
+  </script> -->
+</body>
+
+</html>
