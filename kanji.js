@@ -11,6 +11,7 @@
   //ユーザーのリファラ情報
   const ref = document.referrer;
   console.log("リファラ", ref);
+  console.log("location.origin", location.origin);
 
   const thisUrls = [
     location.origin + "/",
@@ -23,8 +24,8 @@
   //外部からならjsonを読み込む
   if (needJson) {
     console.log("外部として処理");
-    // fetch('kanjiFile.json') 
-    fetch(location.origin + '/kanjiFile.json')
+    fetch('kanjiFile.json') 
+    // fetch(location.origin + '/kanjiFile.json')
       .then(response => {
         if (!response.ok) {
           throw new Error('HTTP error! status: ' + response.status);
