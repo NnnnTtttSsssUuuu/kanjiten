@@ -1,5 +1,5 @@
 `use strict`;
-{
+
   // URLのクエリ文字列を取得
   const params = new URLSearchParams(window.location.search);
   const unicodeValue = params.get('unicode');
@@ -27,8 +27,8 @@
   //外部からならjsonを読み込む
   if (needJson) {
     console.log("外部として処理");
-    fetch('kanjiFile.json') 
-    // fetch(location.origin + '/kanjiFile.json')
+    fetch('kanjiFile.json')
+      // fetch(location.origin + '/kanjiFile.json')
       .then(response => {
         if (!response.ok) {
           throw new Error('HTTP error! status: ' + response.status);
@@ -42,8 +42,8 @@
         openKanji(unicodeValue);
       })
       .catch(error => console.error('Error loading JSON:', error));
-        alert('JSONの読み込みに失敗しました: ' + error.message);
-      
+    alert('JSONの読み込みに失敗しました: ' + error.message);
+
 
     // setTimeout(() => {
 
@@ -129,10 +129,10 @@
     // let theTargetKanji = document.querySelector('#theTargetKanji');
     // theTargetKanji.textContent = targetKanji;
 
-    console.log("異体字の情報を得る直前",theKanji.nOfJitai);
+    console.log("異体字の情報を得る直前", theKanji.nOfJitai);
 
     console.log("typeof kariItaiji:", typeof kariItaiji);
-console.log("window.hasOwnProperty('kariItaiji'):", window.hasOwnProperty("kariItaiji"));
+    console.log("window.hasOwnProperty('kariItaiji'):", window.hasOwnProperty("kariItaiji"));
 
     //異体字の情報を得る
     for (let i = 1; i < theKanji.nOfJitai; i++) {
@@ -230,4 +230,3 @@ console.log("window.hasOwnProperty('kariItaiji'):", window.hasOwnProperty("kariI
       window.open(url, '_blank');
     }
   });
-}
