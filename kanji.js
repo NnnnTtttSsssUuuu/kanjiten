@@ -6,12 +6,13 @@
   let targetKanji = 0;
   let jtarget = 0;
   let kariItaiji = [];
+  let kanjiShugo = [];
 
 
   //ユーザーのリファラ情報
   const ref = document.referrer;
-  console.log("リファラ", ref);
-  console.log("location.origin1", location.origin);
+  // console.log("リファラ", ref);
+  // console.log("location.origin1", location.origin);
 
 
   // const thisUrls = [
@@ -26,7 +27,7 @@
 
   //外部からならjsonを読み込む
   if (needJson) {
-    console.log("外部として処理");
+    console.log("外部から開く");
     fetch('kanjiFile.json')
       // fetch(location.origin + '/kanjiFile.json')
       .then(response => {
@@ -38,22 +39,15 @@
       .then(kanjiFile => {
         kanjiShugo = kanjiFile;
         localStorage.setItem('kanjiLocal', JSON.stringify(kanjiFile));
-        console.log("外部として入手");
+        // console.log("外部として入手");
         openKanji(unicodeValue);
       })
       .catch(error => console.error('Error loading JSON:', error));
-    alert('JSONの読み込みに失敗しました: ' + error.message);
-
-
-    // setTimeout(() => {
-
-    //   openKanji(unicodeValue);
-    // }, 200); //1秒間タイマー
-
+    // alert('JSONの読み込みに失敗しました: ' + error.message)
   } else {
 
     kanjiShugo = JSON.parse(localStorage.getItem('kanjiLocal'));
-    console.log("内部として処理");
+    console.log("内部から開く");
     setTimeout(() => {
       openKanji(unicodeValue);
     }, 200); //1秒間タイマー
@@ -129,11 +123,6 @@
     // let theTargetKanji = document.querySelector('#theTargetKanji');
     // theTargetKanji.textContent = targetKanji;
 
-    console.log("異体字の情報を得る直前", theKanji.nOfJitai);
-
-    console.log("typeof kariItaiji:", typeof kariItaiji);
-    console.log("window.hasOwnProperty('kariItaiji'):", window.hasOwnProperty("kariItaiji"));
-
     //異体字の情報を得る
     for (let i = 1; i < theKanji.nOfJitai; i++) {
       kariItaiji[i + 1] = theKanji.kanjiCode + "_" + (i + 1);
@@ -143,7 +132,6 @@
           continue;
         }
       }
-      console.log("異体字の情報を入れ始める");
       theItaiji = kanjiShugo[jtarget];  //異体字はtheItaiji
 
       //異体字のデータを追加

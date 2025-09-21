@@ -1,5 +1,5 @@
 `use strict`;
-{
+
   let oldQuery = "";
   let queryNo = 0;
   // let kanjiShugo = JSON.parse(kanjiFile.json);
@@ -10,7 +10,7 @@
   let sortCheck = 0;
 
   window.onload = function () {
-    console.log("window.onload起動");
+    // console.log("window.onload起動");
     getJson();
   }
 
@@ -41,17 +41,17 @@
 
   //JSON読み込み
   function getJson() {
-    console.log("getJsonに入る");
+    // console.log("getJsonに入る");
     fetch('kanjiFile.json')
       .then(response => {
         if (!response.ok) {
           throw new Error('HTTP error! status: ' + response.status);
         }
         return response.json();  //内部でparseされ、配列となる
-        console.log("return response.json()に入る");
+        // console.log("return response.json()に入る");
       })
       .then(kanjiFile => {
-        console.log("kanjiFileを取得");
+        // console.log("kanjiFileを取得");
         kanjiShugo = kanjiFile;
         localStorage.setItem('kanjiLocal', JSON.stringify(kanjiFile));
         createKanjiTable();
@@ -60,12 +60,6 @@
   }
 
 
-
-
-  //json村読み込み後1
-  // setTimeout(() => {
-
-  console.log("setTimeoutに入る");
   //大漢字表を作成する
   function createKanjiTable() {
     const kanjiHyo = document.querySelector('#kanjiHyo');
@@ -158,9 +152,7 @@
         kanjiHyo.appendChild(kanjiRow);
       }
     }
-
   }
-  // }, 200); //1秒間タイマー
 
 
   //検索する
@@ -236,4 +228,3 @@
     //   }
     // }
   });
-}
