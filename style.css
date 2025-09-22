@@ -7,6 +7,7 @@ body {
   margin: 0;
   padding: 5px;
   font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo UI", "Yu Gothic", "Yu Gothic UI", sans-serif;
+  text-size-adjust: none;
 }
 
 main {
@@ -20,7 +21,8 @@ h1 {
   padding: 0 0 0 10px;
   width: 100%;
   z-index: 1;
-  font-family: 'Noto Serif JP', serif;
+  /* font-family: 'Noto Serif JP', serif; */
+    font-family: serif;
   font-size: 32px;
   background-color: steelblue;
   color: white;
@@ -36,7 +38,7 @@ h1 {
 
 
 #searchInput {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 #searchButton {
@@ -52,7 +54,7 @@ h1 {
   table-layout: fixed;
   position: static;
   top: 45px;
-  width: 450px;
+  /* width:730px; */
   border-collapse: collapse;
   margin: 40px 0 0 0;
   padding: 0 0 0 10px;
@@ -160,6 +162,7 @@ h1 {
 .mainMenkuten,
 .mainUnicode {
   width: 90px;
+  min-width: 50px;  
 }
 
 .mainJitai1,
@@ -167,6 +170,7 @@ h1 {
 .mainJitai3,
 .mainJitai4 {
   width: 50px;
+  min-width: 50px;  
 }
 
 .mainJitai4over {
@@ -175,16 +179,18 @@ h1 {
 
 .mainMojigun {
   width: 80px;
+  min-width: 60px;  
 }
 
 .mainSetsumei {
   width: 100px;
+ min-width: 80px;  
 }
 
 .mainYomi {
-  width: 130px;
+   width: auto;
+  min-width: 130px;  
 }
-
 
 .highlight {
   background-color: yellow !important;
